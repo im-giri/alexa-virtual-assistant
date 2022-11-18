@@ -23,12 +23,11 @@ def take_command():
             print("Go on, listening...")
             voice = listener.listen(source)
             command = listener.recognize_google(voice)
-            # print('sss')
             command = command.lower()
             if 'alexa' in command:
                 command = command.replace('alexa', '')
     except:
-        # print("error")
+        print("Oops! something went wrong!!")
         pass
     return command
 
@@ -63,8 +62,6 @@ def run_alexa():
 
 
 while True:
-    a = run_alexa()
-    if a == "end":
+    ret_val = run_alexa()
+    if ret_val == "end":
         break
-
-# run_alexa()
